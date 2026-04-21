@@ -128,6 +128,7 @@ const EvaluateSchema = z.object({
   web_query: z.string().optional(),
 });
 
+// 评估节点 判断是否需要联网搜索补充
 const evaluateNode = async (state) => {
   const hasWeb = Boolean(state.webContext && String(state.webContext).trim());
   console.log(hasWeb ? "---EVALUATE_CONTEXT_WITH_WEB---" : "---EVALUATE_LOCAL_CONTEXT---");
